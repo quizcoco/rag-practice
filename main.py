@@ -38,8 +38,7 @@ while True:
         break
 
     rewrite_prompt = f"""
-다음 질문을 문서 검색에 적합한 짧은 검색 문장으로 변환하라.
-설명하지 말고, 핵심 키워드 중심으로 작성하라.
+다음 질문을 문서 검색에 적합한 문장으로 다시 써라. 단어 키워드를 잘 챙겨라.
 질문: {user_input}
 """
 
@@ -56,6 +55,7 @@ while True:
     
     #  1. 벡터 검색
     docs = search(rewritten_query)
+    print(docs)
 
     context = "\n\n".join(docs)
 
